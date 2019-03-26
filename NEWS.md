@@ -7,6 +7,8 @@ User-visible changes worth mentioning.
 
 ## master
 
+- [#1225] Allow to explicitly set non-expiring tokens in `custom_access_token_expires_in` configuration
+  option using `Float::INIFINITY` return value.
 - [#1223] Update Hound/Rubocop rules, correct Doorkeeper codebase to follow style-guides.
 
 ## 5.1.0.rc2

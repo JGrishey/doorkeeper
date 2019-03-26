@@ -239,7 +239,6 @@ module Doorkeeper
         Builder.instance_eval do
           remove_method name if method_defined?(name)
           define_method name do |*args, &block|
-            # TODO: is builder_class option being used?
             value = if attribute_builder
                       attribute_builder.new(&block).build
                     else
@@ -462,6 +461,14 @@ module Doorkeeper
 
     def token_grant_types
       @token_grant_types ||= calculate_token_grant_types.freeze
+    end
+
+    def option_defined?(name)
+      !instance_variable_get("@#{name}").nil?
+    end
+
+    def options_for(option_name)
+      instance_variable_get("@#{option_name}_options") || {}
     end
 
     private
