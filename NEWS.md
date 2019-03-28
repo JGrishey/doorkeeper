@@ -46,6 +46,7 @@ User-visible changes worth mentioning.
 - [#1195] Allow to customize Token Introspection response (fixes #1194).
 - [#1189] Option to set `token_reuse_limit`.
 - [#1191] Try to load bcrypt for hashing of application secrets, but add fallback.
+- [#1224] Do not try to store token if not found by fallback hashing strategy.
 
 ## 5.1.0.rc1
 
